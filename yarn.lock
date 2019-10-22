@@ -2013,7 +2013,7 @@ babel-plugin-named-asset-import@^0.3.4:
   resolved "https://registry.npm.taobao.org/babel-plugin-named-asset-import/download/babel-plugin-named-asset-import-0.3.4.tgz#4a8fc30e9a3e2b1f5ed36883386ab2d84e1089bd"
   integrity sha1-So/DDpo+Kx9e02iDOGqy2E4Qib0=
 
-"babel-plugin-styled-components@>= 1":
+"babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.10.6:
   version "1.10.6"
   resolved "https://registry.npm.taobao.org/babel-plugin-styled-components/download/babel-plugin-styled-components-1.10.6.tgz#f8782953751115faf09a9f92431436912c34006b"
   integrity sha1-+HgpU3URFfrwmp+SQxQ2kSw0AGs=
@@ -8165,7 +8165,7 @@ react-error-overlay@^6.0.3:
   resolved "https://registry.npm.taobao.org/react-error-overlay/download/react-error-overlay-6.0.3.tgz#c378c4b0a21e88b2e159a3e62b2f531fd63bf60d"
   integrity sha1-w3jEsKIeiLLhWaPmKy9TH9Y79g0=
 
-react-is@^16.8.1, react-is@^16.8.4:
+react-is@^16.10.2, react-is@^16.8.1, react-is@^16.8.4:
   version "16.10.2"
   resolved "https://registry.npm.taobao.org/react-is/download/react-is-16.10.2.tgz#984120fd4d16800e9a738208ab1fba422d23b5ab"
   integrity sha1-mEEg/U0WgA6ac4IIqx+6Qi0jtas=
@@ -9235,9 +9235,9 @@ style-loader@1.0.0:
     schema-utils "^2.0.1"
 
 styled-components@^5.0.0-beta.11:
-  version "5.0.0-beta.11"
-  resolved "https://registry.npm.taobao.org/styled-components/download/styled-components-5.0.0-beta.11.tgz#8d038e03d9fe144b0884cd8e053ee3a93308e887"
-  integrity sha1-jQOOA9n+FEsIhM2OBT7jqTMI6Ic=
+  version "5.0.0-beta.8-groupsizefix"
+  resolved "https://registry.npm.taobao.org/styled-components/download/styled-components-5.0.0-beta.8-groupsizefix.tgz#0497f11c0d60e9e51faa4b802afab7cc22136e42"
+  integrity sha1-BJfxHA1g6eUfqkuAKvq3zCITbkI=
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
     "@babel/traverse" "^7.4.5"
@@ -9264,6 +9264,11 @@ stylis-rule-sheet@^0.0.10:
   version "0.0.10"
   resolved "https://registry.npm.taobao.org/stylis-rule-sheet/download/stylis-rule-sheet-0.0.10.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fstylis-rule-sheet%2Fdownload%2Fstylis-rule-sheet-0.0.10.tgz#44e64a2b076643f4b52e5ff71efc04d8c3c4a430"
   integrity sha1-ROZKKwdmQ/S1Ll/3HvwE2MPEpDA=
+
+stylis@^3.5.4:
+  version "3.5.4"
+  resolved "https://registry.npm.taobao.org/stylis/download/stylis-3.5.4.tgz#f665f25f5e299cf3d64654ab949a57c768b73fbe"
+  integrity sha1-9mXyX14pnPPWRlSrlJpXx2i3P74=
 
 supports-color@^2.0.0:
   version "2.0.0"
