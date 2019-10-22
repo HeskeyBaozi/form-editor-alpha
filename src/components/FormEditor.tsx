@@ -24,20 +24,18 @@ const Wrapper = styled.div`
   grid-template-areas:
     'header header right'
     'left center right';
-
-  > * {
-    overflow: auto;
-  }
-`;
-
-const EditorHeader = styled.div`
-  grid-column-start: 1;
-  grid-column-end: span 2;
 `;
 
 const Paper = styled.div`
   padding: 1rem;
-  border: 1px solid lightblue;
+  border: 1px solid #282c34;
+  overflow: auto;
+`;
+
+const EditorHeader = styled(Paper)`
+  overflow: hidden;
+  grid-column-start: 1;
+  grid-column-end: span 2;
 `;
 
 const EditorLeft = styled(Paper)`
@@ -79,7 +77,7 @@ const FormEditor: React.FC<FormEditorProps> = ({
   const jsonOfValue = useMemo(
     () =>
       prettier.format(JSON.stringify(value), {
-        parser: 'json',
+        parser: 'json5',
         plugins: [parserBabylon]
       }),
     [value]

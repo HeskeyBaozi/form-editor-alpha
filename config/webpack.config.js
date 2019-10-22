@@ -48,7 +48,9 @@ const useTypeScript = fs.existsSync(paths.appTsConfig);
 const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
+const lessRegex = /\.less$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
+const lessModuleRegex = /\.module\.less$/;
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
@@ -81,7 +83,11 @@ module.exports = function(webpackEnv) {
   const env = getClientEnvironment(publicUrl);
 
   // common function to get style loaders
-  const getStyleLoaders = (cssOptions, preProcessor) => {
+  const getStyleLoaders = (
+    cssOptions,
+    preProcessor,
+    preProcessorOptions = {}
+  ) => {
     const loaders = [
       isEnvDevelopment && require.resolve('style-loader'),
       isEnvProduction && {
@@ -128,9 +134,12 @@ module.exports = function(webpackEnv) {
         },
         {
           loader: require.resolve(preProcessor),
-          options: {
-            sourceMap: true
-          }
+          options: Object.assign(
+            {
+              sourceMap: true
+            },
+            preProcessorOptions
+          )
         }
       );
     }
@@ -396,7 +405,7 @@ module.exports = function(webpackEnv) {
                   require.resolve('babel-plugin-styled-components'),
                   [
                     require.resolve('babel-plugin-import'),
-                    { libraryName: 'antd', style: 'css' }
+                    { libraryName: 'antd', style: true }
                   ]
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
@@ -478,6 +487,28 @@ module.exports = function(webpackEnv) {
                   sourceMap: isEnvProduction && shouldUseSourceMap
                 },
                 'sass-loader'
+              ),
+              // Don't consider CSS imports dead code even if the
+              // containing package claims to have no side effects.
+              // Remove this when webpack adds a warning or an error for this.
+              // See https://github.com/webpack/webpack/issues/6571
+              sideEffects: true
+            },
+            {
+              test: lessRegex,
+              exclude: lessModuleRegex,
+              use: getStyleLoaders(
+                {
+                  importLoaders: 2,
+                  sourceMap: isEnvProduction && shouldUseSourceMap
+                },
+                'less-loader',
+                {
+                  modifyVars: {
+                    'primary-color': '#09d3ac'
+                  },
+                  javascriptEnabled: true
+                }
               ),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.

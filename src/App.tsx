@@ -5,7 +5,7 @@ import FormEditor from './components/FormEditor';
 import './App.css';
 
 const PreviewWrapper = styled.div`
-  border: 1px solid lightblue;
+  border: 1px solid #282c34;
   width: 75vw;
   height: 80vh;
   margin: 1rem auto 1rem auto;
