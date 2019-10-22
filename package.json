@@ -8,12 +8,13 @@
     "test": "node scripts/test.js"
   },
   "dependencies": {
+    "antd": "^3.24.2",
+    "prettier": "^1.18.2",
     "react": "^16.10.2",
     "react-app-polyfill": "^1.0.4",
     "react-dom": "^16.10.2",
-    "react-is": "^16.10.2",
-    "styled-components": "^5.0.0-beta.11",
-    "stylis": "^3.5.4"
+    "rxjs": "^6.5.3",
+    "styled-components": "^4.4.0"
   },
   "devDependencies": {
     "@babel/core": "7.6.0",
@@ -21,6 +22,7 @@
     "@svgr/webpack": "4.3.2",
     "@types/jest": "24.0.19",
     "@types/node": "12.11.2",
+    "@types/prettier": "^1.18.3",
     "@types/react": "16.9.9",
     "@types/react-dom": "16.9.2",
     "@types/styled-components": "^4.1.19",
@@ -29,6 +31,7 @@
     "babel-eslint": "10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "8.0.6",
+    "babel-plugin-import": "^1.12.2",
     "babel-plugin-named-asset-import": "^0.3.4",
     "babel-plugin-styled-components": "^1.10.6",
     "babel-preset-react-app": "^9.0.2",
