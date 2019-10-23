@@ -26,7 +26,7 @@ export interface UIEntity {
 
 export interface FormEditorValue {
   id: string;
-  key: number; // primary key
+  key: string; // primary key
   title: string;
   content: UIEntity[];
   actions: UIEntity[];

@@ -57,7 +57,7 @@ const value = {
       title: '多选框',
       value: '',
       hintText: 'fafa',
-      key: 'sex_choice',
+      key: 'sex_choice_multi',
       orientation: 0,
       orientation_child: 0,
       url: 'fafa',
@@ -96,7 +96,7 @@ const value = {
       value: 'textview',
       hintText: 'fafa',
       orientation: 0,
-      key: 'sex_choice'
+      key: 'sex_choice_label'
     },
     {
       key: 'switch_bind',
@@ -118,7 +118,7 @@ const value = {
     }
   ],
   id: 'form_user_info',
-  key: 0,
+  key: 'this_is_form_key',
   title: '用户信息',
   actions: [
     {
