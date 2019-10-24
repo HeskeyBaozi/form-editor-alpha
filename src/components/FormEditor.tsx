@@ -5,6 +5,7 @@ import styled, { css } from 'styled-components';
 import { Radio, Typography, Card, Descriptions } from 'antd';
 import { FormEditorValue, UIEntity } from './form-type';
 import OverLay from './OverLay';
+import GeneralBlock from './blocks/GeneralBlock';
 
 interface FormEditorProps {
   theme?: 'light' | 'dark';
@@ -36,16 +37,27 @@ const Paper = styled.div`
 const HoverableCard = styled(Card)`
   position: relative;
   transition: border-color 200ms;
-  min-height: 120px;
+  height: 80px;
   box-sizing: content-box;
   &:hover {
     border-color: #09d3ac;
   }
+  .ant-card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+  }
   ${(props: { actived: boolean }) =>
-    props.actived &&
-    css`
-      border: 2.5px solid #09d3ac;
-    `}
+    props.actived
+      ? css`
+          border: 2.5px solid #09d3ac;
+        `
+      : ``}
 `;
 
 const EditorHeader = styled(Paper)`
@@ -155,9 +167,7 @@ const FormEditor: React.FC<FormEditorProps> = ({
             actived={chosenKey === one.key}
             key={one.key}
           >
-            <div>
-              {one.title} {one.key}
-            </div>
+            <GeneralBlock entity={one} />
             <OverLay />
           </HoverableCard>
         );

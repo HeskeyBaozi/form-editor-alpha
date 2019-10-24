@@ -19,7 +19,7 @@ const value = {
       value: '路飞',
       key: 'user_name',
       hintText: '请输入姓名',
-      orientation: 0,
+      orientation: 1,
       url: 'fafa',
       inputType: 'text'
     },

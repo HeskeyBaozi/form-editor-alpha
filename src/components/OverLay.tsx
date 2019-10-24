@@ -25,12 +25,11 @@ const DragHints = styled.div`
 `;
 
 const FunctionWrapper = styled.div`
-  width: 24px;
-  height: 84px;
-  border-radius: 4px 0 0 4px;
+  width: calc(28px * 3);
+  left: calc(50% - 28px * 3 / 2);
+  height: 24px;
+  border-radius: 4px 4px 0 0;
   position: absolute;
-  right: 0;
-  top: 16px;
   bottom: 0;
   margin: auto;
   text-align: center;
@@ -39,9 +38,9 @@ const FunctionWrapper = styled.div`
   z-index: 100;
 
   .ant-btn {
-    line-height: 28px;
-    height: 28px;
-    width: 24px;
+    line-height: 24px;
+    height: 24px;
+    width: 28px;
     border-radius: 0;
     padding: 0;
   }
