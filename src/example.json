@@ -1,0 +1,44 @@
+{
+  "title": "Image judger form",
+  "description": "simple description",
+  "type": "object",
+  "properties": {
+    // 展示的图片
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "x-component": "ImageGroup",
+      "x-params": {}
+    },
+    // 图片是否合格
+    "isQualified": {
+      "type": "boolean",
+      "x-component": "Switch",
+      "x-params": {
+        "size": "small"
+      }
+    },
+    // 满意度
+    "satisfaction": {
+      "type": "string",
+      "enum": ["ok", "soso", "bad"],
+      "x-component": "RadioGroup",
+      "x-params": {
+        "buttonStyle": "solid",
+        "enumLabels": ["很OK", "一般", "不好"]
+      }
+    },
+    // 不合格原因
+    "unqualifiedReason": {
+      "type": "string",
+      "x-component": "TextArea",
+      "x-params": {
+        "minRow": 4,
+        "maxRow": 10
+      }
+    }
+  },
+  "required": ["isQualified"]
+}

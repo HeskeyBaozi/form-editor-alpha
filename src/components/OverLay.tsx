@@ -67,7 +67,7 @@ const CardOverlay = styled.div`
 
 interface OverLayProps {}
 
-const OverLay: React.FC<OverLayProps> = () => {
+const OverLay: React.SFC<OverLayProps> = () => {
   return (
     <CardOverlay>
       <DragHints>
